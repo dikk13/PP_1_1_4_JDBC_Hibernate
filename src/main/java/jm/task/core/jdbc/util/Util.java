@@ -12,15 +12,13 @@ public class Util {
 
     private static Connection connection;
 
-    static {
+
+    public static Connection getConnection() {
         try {
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    public static Connection getConnection() {
         return connection;
     }
 }
